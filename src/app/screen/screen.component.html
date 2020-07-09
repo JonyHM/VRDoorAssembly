@@ -1,0 +1,447 @@
+<div>
+
+  <a-scene shadow="type: pcf">
+    <!-- controle do refinamento das sombras. tem 3 níveis , maior = mais processamento (pcf, basic, pcfsoft.) 
+  
+    <!-- AMBIENTE -->
+    <a-entity id="ambiente" position="6.5 0 0" environment="preset:  starry;  
+      fog: 0.610;
+      groundColor:  #1f502; 
+      grid: none;
+      dressing: trees;
+      dressingColor: #162c18;
+      ground: canyon;
+      active:  true; 
+      groundTexture:  walkernoise;         
+      groundColor: #021a00;
+      groundColor2: #032400;
+      lightPosition: -10.9 0 -4.4">
+    </a-entity>
+  
+    <!-- ILUMINAÇÃO  =============================================================================================== -->
+    <!-- geral -->
+    <a-entity id="light1" light="type: ambient; intensity: 0.170;" visible="True"></a-entity>
+    <a-entity id="light2" 
+      light="castShadow: true; 
+        color: #9e9e9e; 
+        groundColor: #ffffff; 
+        intensity: 0.5; 
+        shadowCameraNear: 0.38;
+        shadowCameraBottom: -0.49; 
+        shadowRadius: 1.83; 
+        shadowCameraFar: 9.550" 
+      scale="0.26 0.18 0.18"
+      position="-2.92 -0.0025 2.12328" 
+      rotation="0 -9.83 0"> 
+    </a-entity>
+  
+    <!-- Poste lado de fora  -->
+    <!-- poste lampada -->
+    <a-sphere id="poste_1" visible="true" color="green" position="-16.70079 3.94793 0.6035" rotation="-90 0 0"
+      scale="0.1 0.1 0.1" visible=""
+      light="type: spot; intensity: 2.89; angle: 59.59; distance: 10.57; shadowCameraFar: 0.5; shadowCameraFov: -0.12; 
+      shadowCameraNear: 0; shadowCameraTop: 0; shadowCameraRight: 0; shadowCameraBottom: -9.95; shadowCameraLeft:0;">
+    </a-sphere>
+    <!-- poste spot de luz -->
+    <a-entity id="poste_lampada1" light="type: spot; intensity: 100; color: white; distance: 0.5; angle: 55.36"
+      position="-16.73724 3.65924 0.58546" rotation="90 0 0">
+    </a-entity>
+  
+    <!-- HANGAR -->
+    <!-- lamp 1 --------------------- -->
+    <a-sphere segments=50 opacity="0.2" color="#f9ffda" position="-2.7 4.3 2.5" rotation="-90 0 0" scale="1 1 1"
+      visible="true">
+    </a-sphere>
+    <a-sphere opacity="0.1" color="white" position="-2.7 4.3 2.5" rotation="-90 0 0" scale="1.8 1.8 1.8" visible="true">
+    </a-sphere>
+    <!-- spot lampada 1 -->
+    <!-- controle do 'facho' de luz saindo da lampada -->
+    <a-sphere id="lampada1" color="white" position="-2.7 4.3 2.5" rotation="-90 0 0" scale="0.1 0.1 0.1" visible="true"
+      light="type: spot; color: #FFF; intensity: 0.54; angle:30; penumbra:61.0;"> 
+    </a-sphere>  
+    <!-- "acender" lampada 1 -->
+    <!-- usando um spot para simular a lampada acesa -->
+    <a-entity id="lampada1-0" light="type: spot; intensity: 100; color: white; distance:0.5" position="-2.8 4 2.5 "
+      rotation="90 0 0">
+    </a-entity>
+  
+    <!-- lamp 2 --------------------- -->
+    <a-sphere segments=50 color="#f9ffda" opacity="0.2" position="0.1 4.3 2.5" rotation="-90 0 0" scale="1 1 1"
+      visible="true"> 
+    </a-sphere>
+    <a-sphere color="white" opacity="0.1" position="0.1 4.3 2.5" rotation="-90 0 0" scale="1.8 1.8 1.8" 
+      visible="true">
+    </a-sphere>
+    <!-- spot lampada 2 -->
+    <a-sphere color="white" position="0.1 4.3 2.5" rotation="-90 0 0" scale="0.1 0.1 0.1" visible="true"
+      light="type: spot; color: #FFF; intensity: 0.54; angle:30;penumbra:61.0;"> 
+    </a-sphere>
+    <!-- "acender" lampada 2 -->
+    <a-entity light="type: spot; intensity: 100; color: white; distance:0.5" position="0 4 2.5 " rotation="90 0 0">
+    </a-entity>
+  
+    <!-- lamp 3 --------------- -->
+    <a-sphere segments=50 color="#f9ffda" opacity="0.2" position="3.2 4.3 2.5" rotation="-90 0 0" scale="1 1 1"
+      visible="true"> 
+    </a-sphere>
+    <a-sphere color="white" opacity="0.1" position="3.2 4.3 2.5" rotation="-90 0 0" scale="1.8 1.8 1.8" visible="true">
+    </a-sphere>
+    <!-- spot lampada 3 -->
+    <a-sphere color="white" position="3.2 4.3 2.5" rotation="-90 0 0" scale="0.1 0.1 0.1" visible="true"
+      light="type: spot; color: #FFF; intensity: 0.54; angle:30;penumbra:61.0;"> 
+    </a-sphere>
+    <!-- "acender" lampada 3 -->
+    <a-entity light="type: spot; intensity: 100; color: white; distance:0.5" position="3.2 4 2.5 " rotation="90 0 0">
+    </a-entity>
+  
+    <!-- lamp 4 --------------------------------------------------------- -->
+    <a-sphere segments=50 color="#f9ffda" opacity="0.2" position="6.5 4.3 2.5" rotation="-90 0 0" scale="1 1 1"
+      visible="true"> 
+    </a-sphere>
+    <a-sphere color="white" opacity="0.1" position="6.5 4.3 2.5" rotation="-90 0 0" scale="1.8 1.8 1.8" visible="true">
+    </a-sphere>
+    <!-- spot lampada 4 -->
+    <a-sphere color="white" position="6.5 4.3 2.5" rotation="-90 0 0" scale="0.1 0.1 0.1" visible="true"
+      light="type: spot; color: #FFF; intensity: 0.54; angle:30;penumbra:61.0"> 
+    </a-sphere>
+    <!-- "acender" lampada 4 -->
+    <a-entity light="type: spot; intensity: 100; color: white; distance:0.5" position="6.5 4 2.5 " rotation="90 0 0">
+    </a-entity>
+  
+    <!-- lamp 5--------------------------------------------------------- -->
+    <a-sphere segments=50 color="#f9ffda" opacity="0.2" position="9.7 4.3 2.5" rotation="-90 0 0" scale="1 1 1"
+      visible="true"> 
+    </a-sphere>
+    <a-sphere color="white" opacity="0.1" position="9.7 4.3 2.5" rotation="-90 0 0" scale="1.8 1.8 1.8" visible="true">
+    </a-sphere>
+    <!-- spot lampada 5 -->
+    <a-sphere color="white" position="9.7 4.3 2.5" rotation="-90 0 0" scale="0.1 0.1 0.1" visible="true"
+      light="type: spot; color: #FFF; intensity: 0.54; angle:30;penumbra:61.0;"> 
+    </a-sphere>
+    <!-- "acender" lampada 5 -->
+    <a-entity light="type: spot; intensity: 100; color: white; distance:0.5" position="9.7 4 2.5 " rotation="90 0 0">
+    </a-entity>
+  
+    <!--========================================================================================================== -->
+  
+    <!-- IMAGENS -->
+    <!-- carregando imagens que estão sendo usadas no quadro de fundo -->
+    <img id="img1" crossorigin="" src="https://images-na.ssl-images-amazon.com/images/I/71dIGcFhMIL._AC_SL1001_.jpg">
+    <img id="img2" crossorigin=""
+      src="https://t3.ftcdn.net/jpg/01/99/33/12/240_F_199331210_yNekHPBgSlsA9VdVbj4aO0PU1dMWijpW.jpg">
+    <a-image look-at="#player1" id="image1" src="#img1" scale="1.520 2 2" transparent="true" position="1.52 2.54 -2.54"
+      visible="true" width="2"></a-image>
+    <a-image look-at="#player2" id="image2" src="#img2" scale="3.02 2.02 1.650" transparent="true"
+      position="1.51 2.53 -2.56" visible="false"></a-image>
+    <!-- IMAGENS SEGUNDA MOLDURA -->
+  
+    <img id="img1-1" crossorigin=""
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Imagens%20moldura%202/p1.jpg">
+    <img id="img2-1" crossorigin=""
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Imagens%20moldura%202/p2.jpg">
+    <img id="img3-1" crossorigin=""
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Imagens%20moldura%202/p3.jpg">
+    <img id="img4-1" crossorigin=""
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Imagens%20moldura%202/p4.jpg">
+  
+    <a-image look-at="#player1" id="image1-1" src="#img1-1" scale="0.37 2.01 2" transparent="true"
+      position="11.183 2.54 -2.54" visible="" width="2" material="" geometry="" (click)="didClickFirstImage()">
+    </a-image>
+    <a-image look-at="#player2" id="image2-1" src="#img2-1" scale="0.37 2.01 2" transparent="true"
+      position="11.974 2.54 -2.54" visible="" width="2" material="" geometry="" (click)="didClickSecondImage()">
+    </a-image>
+    <a-image look-at="#player3" id="image3-1" src="#img3-1" scale="0.37 2.01 2" transparent="true"
+      position="12.759 2.54 -2.54" visible="" width="2" material="" geometry="" (click)="didClickThirdImage()">
+    </a-image>
+    <a-image look-at="#player4" id="image4-1" src="#img4-1" scale="0.32 2.01 2" transparent="true"
+      position="13.495 2.54 -2.54" visible="" width="2" material="" geometry="" (click)="didClickFourthtImage()">
+    </a-image>
+  
+    <!-- IMAGENS PISO -->
+    <img id="pisoImg1" crossorigin=""
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Piso%20imagem/passos.png">
+    <img id="pisoImg2" crossorigin=""
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Piso%20imagem/passos2.png">
+  
+  
+    <a-image look-at="#player1" id="pisoImagem2" src="#pisoImg1" scale="0.89 0.39 1.81" transparent="true"
+      position="8.33298 0.20542 2.98036" visible="false" width="2" material="side: back; wireframeLinewidth: 20"
+      geometry="" rotation="90 0 0"></a-image>
+  
+    <a-image look-at="#player2" id="pisoImagem1" src="#pisoImg2" scale="0.43 0.34 1.81" transparent="true"
+      position="6.47611 0.20542 2.96398" visible="false" width="2" material="side: back; wireframeLinewidth: 20"
+      geometry="" rotation="90 0 0"></a-image>
+  
+    <a-image look-at="#player1" id="pisoImagem3" src="#pisoImg1" scale="0.89 0.39 1.81" transparent="true"
+      position="3.23674 0.20542 2.98036" visible="false" width="2" material="side: back; wireframeLinewidth: 20"
+      geometry="" rotation="90 0 0"></a-image>
+  
+    <a-image look-at="#player2" id="pisoImagem4" src="#pisoImg2" scale="0.43 0.34 1.81" transparent="true"
+      position="1.20136 0.20542 2.96398" visible="false" width="2" material="side: back; wireframeLinewidth: 20"
+      geometry="" rotation="90 0 0"></a-image>
+  
+  
+    <!-- --------------------------------------------------------------------------- -->
+    <p hidden> contador: <span id="count">0</span></p>
+    <!-- controle visual do meu contador que usei na logica da montagem das peças -->
+  
+    <a-gltf-model id="alerta-luz"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/alerta_selecao.gltf"
+      position="10.46186 -0.0378 -2.63003" visible="false" model-opacity="1" animation="property: model-opacity; to: 0.0; loop: 
+      4; dur: 1000" scale="3.22 0.99 1.36"> 
+    </a-gltf-model>
+
+    <a-box id="alerta2" visible="false" color="red" height="0.3" width="3" depth="0.3"
+      position="12.2 1.0378 -2.3"></a-box>
+  
+    <!-- carregando os moedelos gltf -->
+    <a-gltf-model #peca1 id="peca1"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/1.2.gltf"
+      shadow="cast: true" position="0 0 0" rotation="0 0 0" scale="1 1 1"> </a-gltf-model>
+    <!--"shadow="cast: true" habilita sombra dinamica -->
+    <a-gltf-model #peca2 id="peca2"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/2.2.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: false"> </a-gltf-model>
+    <!--"shadow="cast: true" habilita sombra dinamica -->
+    <a-gltf-model #peca3 id="peca3"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/3.2.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: false"> </a-gltf-model>
+    <!--"shadow="cast: true" habilita sombra dinamica -->
+    <a-gltf-model #peca4 id="peca4"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/4.2.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: false"> </a-gltf-model>
+    <!--"shadow="cast: true" habilita sombra dinamica -->
+  
+  
+    <!-- PEÇAS PARA O TABLADO 2 -->
+    <a-gltf-model id="peca1_1"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/1.2.gltf"
+      shadow="cast: false" position="9.998 0 0" rotation="0 0 0" scale="1 1 1" visible="false"> </a-gltf-model>
+    <!--"shadow="cast: true" habilita sombra dinamica -->
+    <a-gltf-model id="peca2_2"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/2.2.gltf"
+      position="10 0 0" rotation="0 0 0" scale="1 1 1" shadow="cast: false" visible="false"> </a-gltf-model>
+    <!--"shadow="cast: true" habilita sombra dinamica -->
+    <a-gltf-model id="peca3_3"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/3.2.gltf"
+      position="9.992 0 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: false"> </a-gltf-model>
+    <!--"shadow="cast: true" habilita sombra dinamica -->
+    <a-gltf-model id="peca4_4"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/4.2.gltf"
+      position="10 0 0" rotation="0 0 0" scale="1 1 1" visible="false"> </a-gltf-model>
+    <!-- "shadow="cast: true" habilita sombra dinamica -->
+  
+    <!----------------------------------- -->
+    <a-assets>
+      <!-- wait loading -->
+  
+      <!-- Quando os modelos 3d são declarados como assets o sistema aguarda estes serem carregados para só depois 
+  abrir o cenário -->
+  
+      <a-asset-item id="tablado"
+        src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/tablado3-11.gltf"
+        position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true">
+      </a-asset-item>
+      <a-asset-item static-body id="hangar"
+        src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/Hangar.0.9.gltf"
+        rotation="0 0 0" scale="1 1 1" visible="true"> </a-asset-item>
+    </a-assets>
+      
+    <a-asset-item id="adminButton" src="https://raw.githubusercontent.com/JonyHM/gltfModels/master/scene.gltf"
+      rotation="0 0 0" scale="1 1 1" visible="true">
+    </a-asset-item>
+    <a-asset-item id="hangarPiso"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/hangar-PISO2.gltf"
+      scale="1 1 1" visible="true">
+    </a-asset-item>
+    <a-asset-item id="hangarViga"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/Estrutura-vigas.gltf"
+      scale="1 1 1" visible="true">
+    </a-asset-item>
+  
+    <!----------------------------------- -->
+    <a-entity *ngIf="this.user.role === 'ADM'" text="value: Administracao;"  scale="3 3 3" position="6 0.5 2" (click)="score()"></a-entity>
+    <a-gltf-model *ngIf="this.user.role === 'ADM'" id="buttonAdm" src="#adminButton" shadow="cast: true;" position="5 0.3 2" (click)="score()"> </a-gltf-model>
+    <!----------------------------------- -->
+
+    <a-gltf-model src="#tablado" shadow="cast: true;" position="0 0.1 0"> </a-gltf-model>
+    <a-gltf-model src="#tablado" shadow="cast: false;" position="10 0.1 0"> </a-gltf-model> <!-- TABLADO 2-->
+    <a-gltf-model src="#hangar" shadow="cast: false;" position="0 0.1 0"> </a-gltf-model>
+    <a-gltf-model src="#hangarPiso" shadow="cast: false;" position="0 0.1 0"> </a-gltf-model>
+    <a-gltf-model src="#hangarViga" shadow="cast: true;" position="0 0.1 0"> </a-gltf-model>
+  
+
+  
+    
+    <!-- ========= Decoração ================================================ -->
+    <a-gltf-model id="trolley"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/trolley.01.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true"> </a-gltf-model>
+    <a-gltf-model id="portatrolley"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/PORTAtrolley.01.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="moldura"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/moldura-1.gltf"
+      visible="true" position="0 0 0" shadow="cast: false"> </a-gltf-model>
+    <a-gltf-model id="moldura2"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/moldura-1.gltf"
+      visible="true" position="10.826 0 0" shadow="cast: false"> </a-gltf-model>
+    <a-gltf-model id="extintor"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/extintor.gltf"
+      visible="" position="-2.92379 0.34635 8.70807" shadow="cast: false" scale="1.13 1.03 1.13"> </a-gltf-model>
+    <a-gltf-model id="cidade"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/cidade.gltf"
+      position="22.76 0.464 -3.468"> </a-gltf-model>
+    <a-gltf-model id="poste-luz"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/poste-lampada.gltf"
+      position="-16.10168 0.464 2.23248" rotation="0 90 0"> </a-gltf-model>
+  
+    <!-- Luminarias -->
+    <a-gltf-model id="Lampada1"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/lampara1.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="Lampada2"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/lampara2.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="Lampada3"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/lampara3.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="Lampada4"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/lampara4.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="Lampada5"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/lampara5.gltf"
+      position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+  
+    <!-- ===========================================-->
+    <!-- PARTE PARA USO EXCLUSIVO DO VR /não carrega no desktop, apenas mobile-->
+  
+    <!-- criando um cursor (um circulo) que funciona como um mouse só que com um click automatico quando o circulo interage com outros objetos -->
+  
+    <!-- CURSOR -->
+  
+    <a-entity position="10 1 3" id="CameraPosition">
+      <!-- 0 0.5  4.5-->
+      <a-entity camera look-controls wasd-controls vr-cursor id="teste" static-body>
+        <a-entity id="mycursor" visible="false" position="0 0 -3"
+          geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.2;"
+          material="color: #4Dffff; shader: flat;opacity: 0.2; transparent: true" cursor="maxDistance: 30; fuse: false;"
+          opacity="1" static-body="true"
+          animation__click="property: scale; startEvents: click; easing: linear; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 900; from: 1 1 1; to: 0.1 0.1 0.1"
+          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 100; to: 1 1 1">
+  
+        </a-entity>
+      </a-entity>
+    </a-entity>
+  
+    <!-- ------------------------------------------------------------------>
+  
+    <!-- fisic button -->
+    <!-- light ON/OFF -->
+  
+    <!-- 
+    <a-entity light="type: spot; intensity: 10; angle: 16.35; color: #ffff80; distance: 0.59" id="lightSWITCH-SPOT"
+  visible="" distance="0.5" position="-0.35 1.21 0.43 "></a-entity>
+    
+    <a-gltf-model id ="lightSWITCH" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/LAMPADA.gltf" visible="true"> </a-gltf-model> -->
+  
+    <!-- Alerta seleção -->
+  
+    <a-gltf-model id="alerta"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/alerta_selecao.gltf"
+      position="10.59186 -0.0378 -2.46437" rotation="" scale="" visible="false"> </a-gltf-model>
+  
+    <!-- SETAS DE ROTAÇÃO Tablado 1-->
+    <a-gltf-model id="setaEsquerda" (click)='leftRotateFirstTable()'
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-left.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="setaEsquerda0"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-left0.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true;"> </a-gltf-model>
+    <a-gltf-model id="setaDireita" (click)='rightRotateFirstTable()'
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-right.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="setaDireita0"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-right0.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true;"> </a-gltf-model>
+  
+    <!-- ------------------------------------ -->
+    <!-- TRAS -->
+    <a-gltf-model id="tras" (click)='previousPiece()'
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/atras.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="tras0"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/atras0.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true;"> </a-gltf-model>
+  
+    <!-- FRENTE -->
+    <a-gltf-model id="frente" (click)='nextPiece()'
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/frente.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="frente0"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/frente0.gltf"
+      position="0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true;"> </a-gltf-model>
+  
+    <!---------------------------------------------------------------------------------->
+    <!-- SETAS DE ROTAÇÃO Tablado 2-->
+    <a-gltf-model id="leftRotation" (click)="leftRotateSecondTable()"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-left.gltf"
+      position="10.3 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="leftRotationBackground"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-left0.gltf"
+      position="10.3 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true;"> </a-gltf-model>
+    <a-gltf-model id="rightRotation" (click)="rightRotateSecondTable()"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-right.gltf"
+      position="9.7 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true"> </a-gltf-model>
+    <a-gltf-model id="rightRotationBackground"
+      src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-right0.gltf"
+      position="9.7 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true;"> </a-gltf-model>
+  
+    <!-- MOVIMENTAÇÃO (VR) PISO -->
+    <!-- -->
+    <a-entity class="clickable" id="piso_1" geometry="primitive: cylinder" (click)="didClickAtPiso1()"
+      material="color: #ff3b3b ;opacity: 0.4; transparent: true" visible="false" position="-5 0.1 3" visible="false"
+      scale="0.2 0.2 0.2" rotation="0 0 0"
+      animation="property: material.color; to: #fdff75; dur: 1050; easing: easeInQuad; loop:true; visible:true">
+    </a-entity>
+    <a-entity class="clickable" id="piso_11" geometry="primitive: cylinder; radius: 0.74"
+      material="color: #aeaeae; opacity: 1; transparent: false" position="-4.99541 -0.00108 2.99187" visible="false"
+      scale="0.4 0.4 0.38" rotation="">
+    </a-entity>
+    <!-- -->
+    <a-entity class="clickable" id="piso0" geometry="primitive: cylinder" (click)="didClickAtPiso0()"
+      material="color: #ff3b3b;opacity: 0.4; transparent: true" position="0 0.1 3" visible="false" scale="0.2 0.2 0.2"
+      rotation="0 0 0" animation="property: material.color; to: #f7fe96; dur: 1050; easing: easeInQuad; loop:true">
+    </a-entity>
+    <a-entity class="clickable" visible="false" id="piso01" geometry="primitive: cylinder; radius: 0.74"
+      material="color: #aeaeae; opacity: 1; transparent: false" position="0 -0.00108 3" scale="0.4 0.4 0.38"
+      rotation="">
+    </a-entity>
+    <!-- -->
+    <a-entity class="clickable" visible="false" id="piso1" geometry="primitive: cylinder" (click)="didClickAtPiso01()"
+      material="color: #ff3b3b;opacity: 0.4; transparent: true" position="5 0.1 3" scale="0.2 0.2 0.2" rotation="0 0 0"
+      animation="property: material.color; to: #f7fe96; dur: 1050; easing: easeInQuad; loop:true">
+    </a-entity>
+    <a-entity class="clickable" visible="false" id="piso11" geometry="primitive: cylinder; radius: 0.74"
+      material="color: #aeaeae; opacity: 1; transparent: false" position="5 -0.00108 3" scale="0.4 0.4 0.38"
+      rotation=""> </a-entity>
+  
+    <!-- -->
+    <a-entity class="clickable" visible="false" id="piso2" geometry="primitive: cylinder" (click)="didClickAtPiso02()"
+      material="color: #ff3b3b; opacity: 0.4; transparent: true" position="10.01742 0.1 3" scale="0.2 0.2 0.2"
+      rotation="" animation="property: material.color; to: #f7fe96; dur: 1050; loop: true">
+    </a-entity>
+  
+    <a-entity class="clickable" visible="false" id="piso21" geometry="primitive: cylinder; radius: 0.74"
+      material="color: #aeaeae; opacity: 1; transparent: false" position="10 -0.00108 3" scale="0.4 0.4 0.38"
+      rotation=""> </a-entity>
+  
+    <!-- ========================================================================= -->
+    <!-- ILUMINÇÃO PISO movimentação vr -->
+    <a-entity id="piso_luz1" visible="false"
+      light="type: spot; intensity: 1.03; color: white; distance: 0.51; angle: 54.41"
+      position="-5.00383 0.55998 2.98832" rotation="-90 0 0">
+    </a-entity>
+  </a-scene>
+</div>

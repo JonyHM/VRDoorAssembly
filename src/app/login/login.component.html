@@ -1,0 +1,35 @@
+<mat-card class="login-card">
+
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+  <mat-card-content>
+
+    <form [formGroup]="loginForm">
+      <div class="form-fields-container">
+        
+        <mat-form-field appearance="outline">
+          <mat-label for="username">Nome de usuário</mat-label>
+          <input matInput placeholder="username" formControlName="username" autofocus />
+          <mat-error *ngIf="loginForm.get('username').errors?.required && loginForm.get('username').touched">
+            Obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label for="password">Senha</mat-label>
+          <input matInput placeholder="senha" formControlName="password" type="password" />
+          <mat-error *ngIf="loginForm.get('password').errors?.required && loginForm.get('password').touched">
+            Obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-button [disabled]="loginForm.invalid" (click)="login()" class="submit-button">
+          login
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

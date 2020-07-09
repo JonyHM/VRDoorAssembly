@@ -1,27 +1,31 @@
-# DoorAssembly
+# Lab3 - 3º BD
+Professor da Disciplina: Giuliano Bertoti 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Equipe:
+ - Jonathas H. Moraes - RA: 1460481811044
 
-## Development server
+Projeto para desenvolvimento de um ambiente em realidade virtual que pode substituir manuais de montagem de peças de uma aeronave, podendo virar livremente as peças.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![](./src/assets/plataformas.png)
 
-## Code scaffolding
+Movimentação da peça na plataforma:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<img src="./src/assets/girando-peca.gif" width="70%"/>
 
-## Build
+Montagem das peças na ordem correta, com botões para prosseguir os passos da montagem:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<img src="./src/assets/montagem.gif" width="70%"/>
 
-## Running unit tests
+Montagem com ordem e feedback quando escolhido errado:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<img src="./src/assets/montagem-dinamica.gif" width="70%"/>
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Para um preview do projeto para interação, clique abaixo:
 
-## Further help
+[<img src="./src/assets/live-demo.png" width="25%">](https://jonyhm.github.io/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Projeto de Backend:
+
+[<img src="./src/assets/back.png" width="25%">](https://github.com/JonyHM/door-assembly-api)
