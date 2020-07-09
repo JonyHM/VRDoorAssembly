@@ -21,9 +21,9 @@ Montagem com ordem e feedback quando escolhido errado:
 <img src="./src/assets/montagem-dinamica.gif" width="70%"/>
 
 
-Para um preview do projeto para interação, clique abaixo:
+Para um preview do projeto para interação, clique abaixo (usuário e senha = admin):
 
-[<img src="./src/assets/live-demo.png" alt="usuário e senha: 'admin'" width="25%">](https://jonyhm.github.io/)
+[<img src="./src/assets/live-demo.png" width="25%">](https://jonyhm.github.io/)
 
 
 Projeto de Backend:
