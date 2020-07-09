@@ -23,7 +23,7 @@ Montagem com ordem e feedback quando escolhido errado:
 
 Para um preview do projeto para interação, clique abaixo:
 
-[<img src="./src/assets/live-demo.png" width="25%">](https://jonyhm.github.io/)
+[<img src="./src/assets/live-demo.png" alt="usuário e senha: 'admin'" width="25%">](https://jonyhm.github.io/)
 
 
 Projeto de Backend:
